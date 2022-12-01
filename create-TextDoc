@@ -1,0 +1,20 @@
+import datetime
+
+x = datetime.datetime.now()
+docId = x.strftime("%d%b")
+entryId = x.strftime("%H:%M:%S")
+fileName = (docId + "SecOp.txt")
+f = open(fileName, "at")
+f.write(f"\n## Start ############### {entryId} ##>\n")
+f.write(f"\nText Document name: {fileName}\n")
+f.write(f"Today's date is: {x}\n")
+f.write("Log type: Warning\n\nText msm:\n")
+#Write text below
+f.write(
+  "Hello!\nWelcome to demofile.txt\nThis file is for testing purposes.\nGood Luck!\n"
+)
+f.write(f"Today's date is: {x}\n")
+f.write("\n## End #############################>\n:)")
+f = open(fileName, "r")
+print(f.read())
+f.close()
